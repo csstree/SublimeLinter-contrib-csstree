@@ -1,7 +1,7 @@
 SublimeLinter-contrib-csstree
 ================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-csstree.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-csstree)
+[![Build Status](https://travis-ci.org/csstree/SublimeLinter-contrib-csstree.svg?branch=master)](https://travis-ci.org/csstree/SublimeLinter-contrib-csstree)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [csstree-validator](https://github.com/csstree/validator). It will be used with files that have the “CSS” syntax.
 
