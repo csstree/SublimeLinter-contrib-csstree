@@ -10,23 +10,18 @@
 
 """This module exports the CssTree plugin class."""
 
-from SublimeLinter.lint import Linter, util
+from SublimeLinter.lint import Linter
 
 
 class CssTree(Linter):
     """Provides an interface to csstree validator."""
 
-    syntax = ('css', 'css3', 'html')
-    cmd = 'csstree-validator @ --reporter checkstyle'
-    version_args = '--version'
-    version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 1.0'
+    cmd = 'csstree-validator $temp_file --reporter checkstyle'
+    tempfile_suffix = 'css'
+    defaults = {
+        'selector': 'source.css - meta.attribute-with-value',
+    }
     regex = r'''(?mix)
         line="(?P<line>\d+)".+column="(?P<col>\d+)".+message="(?P<message>[\s\S]+?)(?<!\\)"
     '''
     multiline = True
-    error_stream = util.STREAM_BOTH
-    tempfile_suffix = 'css'
-    selectors = {
-        'html': 'source.css.embedded.html'
-    }
